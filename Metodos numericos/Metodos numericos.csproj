@@ -1,0 +1,1079 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9C6FBA1-163D-4893-A02D-725EDD2B7AFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Metodos_numericos</RootNamespace>
+    <AssemblyName>Metodos numericos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Calculus">
+      <HintPath>..\..\..\..\Downloads\Calculos-dll-para-C-sharp-master\Calculos-dll-para-C-sharp-master\Calculus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Theme\assets\css\bootstrap.css" />
+    <Content Include="Admin\Theme\assets\css\bootstrap.min.css" />
+    <Content Include="Admin\Theme\assets\css\custom.min.css" />
+    <Content Include="Admin\Theme\assets\css\font-awesome.min.css" />
+    <Content Include="Admin\Theme\assets\css\nprogress.css" />
+    <Content Include="Admin\Theme\assets\css\style-responsive.css" />
+    <Content Include="Admin\Theme\assets\css\style.css" />
+    <Content Include="Admin\Theme\assets\css\table-responsive.css" />
+    <Content Include="Admin\Theme\assets\css\to-do.css" />
+    <Content Include="Admin\Theme\assets\css\zabuto_calendar.css" />
+    <Content Include="Admin\Theme\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\Theme\assets\img\1366_2000.jpg" />
+    <Content Include="Admin\Theme\assets\img\blog-bg.jpg" />
+    <Content Include="Admin\Theme\assets\img\checkbox-gray.png" />
+    <Content Include="Admin\Theme\assets\img\descarga.jpg" />
+    <Content Include="Admin\Theme\assets\img\instagram.jpg" />
+    <Content Include="Admin\Theme\assets\img\login-bg.jpg" />
+    <Content Include="Admin\Theme\assets\img\logosimbolo_transparente.gif" />
+    <Content Include="Admin\Theme\assets\img\lorde.jpg" />
+    <Content Include="Admin\Theme\assets\img\mask.png" />
+    <Content Include="Admin\Theme\assets\img\metodos.jpg" />
+    <Content Include="Admin\Theme\assets\img\ny.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port01.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port02.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port03.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port04.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port05.jpg" />
+    <Content Include="Admin\Theme\assets\img\portfolio\port06.jpg" />
+    <Content Include="Admin\Theme\assets\img\product.jpg" />
+    <Content Include="Admin\Theme\assets\img\product.png" />
+    <Content Include="Admin\Theme\assets\img\profile-01.jpg" />
+    <Content Include="Admin\Theme\assets\img\profile-02.jpg" />
+    <Content Include="Admin\Theme\assets\img\radio-gray.png" />
+    <Content Include="Admin\Theme\assets\img\ui-danro.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-divya.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-sam.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-sherman.jpg" />
+    <Content Include="Admin\Theme\assets\img\ui-zac.jpg" />
+    <Content Include="Admin\Theme\assets\img\unnamed.jpg" />
+    <Content Include="Admin\Theme\assets\img\weather.jpg" />
+    <Content Include="Admin\Theme\assets\img\zoom.png" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-switch.js" />
+    <Content Include="Admin\Theme\assets\js\bootstrap.min.js" />
+    <Content Include="Admin\Theme\assets\js\calendar-conf-events.js" />
+    <Content Include="Admin\Theme\assets\js\chart-master\Chart.js" />
+    <Content Include="Admin\Theme\assets\js\chartjs-conf.js" />
+    <Content Include="Admin\Theme\assets\js\common-scripts.js" />
+    <Content Include="Admin\Theme\assets\js\custom.min.js" />
+    <Content Include="Admin\Theme\assets\js\easy-pie-chart.js" />
+    <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.css" />
+    <Content Include="Admin\Theme\assets\js\fancybox\jquery.fancybox.js" />
+    <Content Include="Admin\Theme\assets\js\fastclick.js" />
+    <Content Include="Admin\Theme\assets\js\form-component.js" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Admin\Theme\assets\js\gritter-conf.js" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\jquery.gritter.css" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\jquery.gritter0.css" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter-light.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter-long.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\gritter.png" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\bootstrap.min.js" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\jquery.gritter.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-1.8.3.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Admin\Theme\assets\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.backstretch.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.nicescroll.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.smartWizard.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.sparkline.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.tagsinput.js" />
+    <Content Include="Admin\Theme\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Admin\Theme\assets\js\morris-conf.js" />
+    <Content Include="Admin\Theme\assets\js\nprogress.js" />
+    <Content Include="Admin\Theme\assets\js\sparkline-chart.js" />
+    <Content Include="Admin\Theme\assets\js\tasks.js" />
+    <Content Include="Admin\Theme\assets\js\zabuto_calendar.js" />
+    <Content Include="Admin\Theme\assets\js\zabuto_calendar.min.js" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.svg" />
+    <Content Include="Admin\Theme\assets\lineicons\index.html" />
+    <Content Include="Admin\Theme\assets\lineicons\lte-ie7.js" />
+    <Content Include="Admin\Theme\assets\lineicons\style.css" />
+    <Content Include="Admin\Theme\basic_table.html" />
+    <Content Include="Admin\Theme\blank.html" />
+    <Content Include="Admin\Theme\buttons.html" />
+    <Content Include="Admin\Theme\calendar.html" />
+    <Content Include="Admin\Theme\chartjs.html" />
+    <Content Include="Admin\Theme\form_component.html" />
+    <Content Include="Admin\Theme\gallery.html" />
+    <Content Include="Admin\Theme\general.html" />
+    <Content Include="Admin\Theme\index.html" />
+    <Content Include="Admin\Theme\lock_screen.html" />
+    <Content Include="Admin\Theme\login.html" />
+    <Content Include="Admin\Theme\morris.html" />
+    <Content Include="Admin\Theme\panels.html" />
+    <Content Include="Admin\Theme\responsive_table.html" />
+    <Content Include="Admin\Theme\todo_list.html" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.bundle.js" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.bundle.min.js" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.css" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.js" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.min.css" />
+    <Content Include="Chart.js-2.9.4\dist\Chart.min.js" />
+    <Content Include="Chart.js-2.9.4\docs\style.css" />
+    <Content Include="Chart.js-2.9.4\gulpfile.js" />
+    <Content Include="Chart.js-2.9.4\karma.conf.js" />
+    <Content Include="Chart.js-2.9.4\rollup.config.js" />
+    <Content Include="Chart.js-2.9.4\rollup.plugins.js" />
+    <Content Include="Chart.js-2.9.4\samples\advanced\content-security-policy.css" />
+    <Content Include="Chart.js-2.9.4\samples\advanced\content-security-policy.html" />
+    <Content Include="Chart.js-2.9.4\samples\advanced\content-security-policy.js" />
+    <Content Include="Chart.js-2.9.4\samples\advanced\progress-bar.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\area\analyser.js" />
+    <Content Include="Chart.js-2.9.4\samples\charts\area\line-boundaries.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\area\line-datasets.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\area\line-stacked.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\area\radar.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bar\horizontal.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bar\multi-axis.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bar\stacked-group.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bar\stacked.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bar\vertical.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\bubble.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\combo-bar-line.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\doughnut.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\basic.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\interpolation-modes.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\line-styles.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\multi-axis.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\point-sizes.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\point-styles.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\skip-points.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\line\stepped.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\pie.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\polar-area.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\radar-skip-points.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\radar.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\scatter\basic.html" />
+    <Content Include="Chart.js-2.9.4\samples\charts\scatter\multi-axis.html" />
+    <Content Include="Chart.js-2.9.4\samples\favicon.ico" />
+    <Content Include="Chart.js-2.9.4\samples\index.html" />
+    <Content Include="Chart.js-2.9.4\samples\legend\callbacks.html" />
+    <Content Include="Chart.js-2.9.4\samples\legend\point-style.html" />
+    <Content Include="Chart.js-2.9.4\samples\legend\positioning.html" />
+    <Content Include="Chart.js-2.9.4\samples\logo.svg" />
+    <Content Include="Chart.js-2.9.4\samples\samples.js" />
+    <Content Include="Chart.js-2.9.4\samples\scales\filtering-labels.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\gridlines-display.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\gridlines-style.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\linear\min-max-suggested.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\linear\min-max.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\linear\step-size.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\logarithmic\line.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\logarithmic\scatter.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\multiline-labels.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\non-numeric-y.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\time\combo.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\time\financial.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\time\line-point-data.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\time\line.html" />
+    <Content Include="Chart.js-2.9.4\samples\scales\toggle-scale-type.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\bar.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\bubble.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\line.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\pie.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\polar.html" />
+    <Content Include="Chart.js-2.9.4\samples\scriptable\radar.html" />
+    <Content Include="Chart.js-2.9.4\samples\style.css" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\border.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\callbacks.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\custom-line.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\custom-pie.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\custom-points.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\interactions.html" />
+    <Content Include="Chart.js-2.9.4\samples\tooltips\positioning.html" />
+    <Content Include="Chart.js-2.9.4\samples\utils.js" />
+    <Content Include="Chart.js-2.9.4\src\adapters\adapter.moment.js" />
+    <Content Include="Chart.js-2.9.4\src\adapters\index.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.bar.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.bubble.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.doughnut.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.horizontalBar.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.line.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.pie.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.polarArea.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.radar.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\controller.scatter.js" />
+    <Content Include="Chart.js-2.9.4\src\controllers\index.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.adapters.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.animation.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.animations.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.controller.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.datasetController.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.defaults.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.element.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.helpers.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.interaction.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.layouts.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.plugins.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.scale.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.scaleService.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.ticks.js" />
+    <Content Include="Chart.js-2.9.4\src\core\core.tooltip.js" />
+    <Content Include="Chart.js-2.9.4\src\elements\element.arc.js" />
+    <Content Include="Chart.js-2.9.4\src\elements\element.line.js" />
+    <Content Include="Chart.js-2.9.4\src\elements\element.point.js" />
+    <Content Include="Chart.js-2.9.4\src\elements\element.rectangle.js" />
+    <Content Include="Chart.js-2.9.4\src\elements\index.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.canvas.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.core.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.easing.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.math.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.options.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\helpers.rtl.js" />
+    <Content Include="Chart.js-2.9.4\src\helpers\index.js" />
+    <Content Include="Chart.js-2.9.4\src\index.js" />
+    <Content Include="Chart.js-2.9.4\src\platforms\platform.basic.js" />
+    <Content Include="Chart.js-2.9.4\src\platforms\platform.dom.css" />
+    <Content Include="Chart.js-2.9.4\src\platforms\platform.dom.js" />
+    <Content Include="Chart.js-2.9.4\src\platforms\platform.js" />
+    <Content Include="Chart.js-2.9.4\src\plugins\index.js" />
+    <Content Include="Chart.js-2.9.4\src\plugins\plugin.filler.js" />
+    <Content Include="Chart.js-2.9.4\src\plugins\plugin.legend.js" />
+    <Content Include="Chart.js-2.9.4\src\plugins\plugin.title.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\index.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.category.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.linear.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.linearbase.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.logarithmic.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.radialLinear.js" />
+    <Content Include="Chart.js-2.9.4\src\scales\scale.time.js" />
+    <Content Include="Chart.js-2.9.4\test\context.js" />
+    <Content Include="Chart.js-2.9.4\test\fixture.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\backgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-absolute.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-offset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-single-reverse.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-max.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-min-interval.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-multiple.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-no-overlap.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-offset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-per-dataset-stacked.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-per-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-reverse.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-single-xy.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-stacked.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderSkipped\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\indexable-object.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\indexable-object.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\negative.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\negative.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\object.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\object.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\scriptable-object.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\scriptable-object.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\borderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\chart-area-clip.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\chart-area-clip.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-horizontal.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-stacked-horizontal.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-stacked.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\horizontal-borders.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\horizontal-borders.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\stacking\order-default.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\stacking\order-specified.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bubble\point-style.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bubble\radius-scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bubble\radius-scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\backgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderAlign\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\borderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-border-align-center.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-border-align-inner.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-circumference-over-2pi.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-circumference.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-weight.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-border-align-center.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-border-align-inner.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-circumference.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-weight.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\backgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\backgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\backgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\backgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderCapStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderCapStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderCapStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderCapStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDashOffset\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDashOffset\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDashOffset\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDashOffset\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDash\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDash\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDash\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderDash\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderJoinStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderJoinStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderJoinStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderJoinStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\borderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x-max.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x-min.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y-max.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y-min.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\specified.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\cubicInterpolationMode\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\cubicInterpolationMode\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\cubicInterpolationMode\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\cubicInterpolationMode\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\order-default.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\order-default.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\order.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\order.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\fill\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\non-numeric-y.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\point-style.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBackgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointBorderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\pointStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\radius\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\rotation\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\stacking\order-default.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\stacking\order-default.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\stacking\order-specified.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\stacking\order-specified.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\angle-array.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\angle-undefined.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\indexable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\indexable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\indexable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\indexable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\scriptable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\scriptable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\scriptable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\scriptable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\value-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\value-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\value-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\backgroundColor\value-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\border-align-center.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\border-align-inner.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\indexable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\indexable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\indexable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\indexable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\scriptable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\scriptable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\scriptable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\scriptable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\value-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\value-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\value-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderAlign\value-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\indexable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\indexable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\indexable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\indexable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\scriptable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\scriptable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\scriptable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\scriptable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\value-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\value-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\value-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderColor\value-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\indexable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\indexable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\indexable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\indexable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\scriptable-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\scriptable-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\scriptable-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\scriptable-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\value-dataset.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\value-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\value-element-options.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\borderWidth\value-element-options.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\backgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\backgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\backgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\backgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderCapStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderCapStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderCapStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderCapStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDashOffset\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDashOffset\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDashOffset\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDashOffset\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDash\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDash\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDash\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderDash\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderJoinStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderJoinStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderJoinStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderJoinStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\borderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\fill\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\fill\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\fill\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\fill\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\point-style.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBackgroundColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderColor\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointBorderWidth\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\pointStyle\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\radius\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\indexable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\indexable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\scriptable.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\scriptable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\value.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\rotation\value.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.scale\label-offset-vertical-axes.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.scale\tick-drawing.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.tooltip\opacity.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.tooltip\opacity.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-circle.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-cross-rot.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-cross.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-dash.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-image.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-image.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-line.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect-rot.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect-rounded.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-star.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-triangle.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\rotation.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\rotation.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\helpers.canvas\rounded-rect.js" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\helpers.canvas\rounded-rect.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-end-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-end.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-start-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-start.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-border.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-spline-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-spline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end-circular.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-circular.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start-circular.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-border.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-span.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-spline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-center-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-center-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-end-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-start-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-center-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-center-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-default-center.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-end-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-start-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-center-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-center-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-default-center.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-end-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-start-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-center-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-center-single.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-end-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-start-mulitiline.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\anglelines-disable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\border-dash.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\circular-border-dash.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-disable.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-no-z.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-z.png" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\indexable-gridlines.png" />
+    <Content Include="Chart.js-2.9.4\test\index.js" />
+    <Content Include="Chart.js-2.9.4\test\matchers.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.bar.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.bubble.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.doughnut.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.line.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.polarArea.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.radar.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\controller.scatter.test.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.controller.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.datasetController.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.element.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.helpers.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.interaction.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.layouts.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.plugin.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.scale.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.scaleService.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.ticks.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\core.tooltip.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\element.arc.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\element.line.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\element.point.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\element.rectangle.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\global.defaults.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\global.deprecations.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\global.namespace.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\helpers.canvas.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\helpers.core.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\helpers.easing.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\helpers.math.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\helpers.options.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\platform.dom.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\plugin.filler.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\plugin.legend.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\plugin.title.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\scale.category.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\scale.linear.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\scale.logarithmic.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\scale.radialLinear.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\specs\scale.time.tests.js" />
+    <Content Include="Chart.js-2.9.4\test\utils.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\biseccion.aspx" />
+    <Content Include="Views\newton_raphson.aspx" />
+    <Content Include="Views\Regla_falsa.aspx" />
+    <Content Include="Views\vista1.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BiseccionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Biseccion.cs" />
+    <Compile Include="Models\Mbabilonico.cs" />
+    <Compile Include="Models\Mnewtton.cs" />
+    <Compile Include="Models\Mregla_falsa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\biseccion.aspx.cs">
+      <DependentUpon>biseccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\biseccion.aspx.designer.cs">
+      <DependentUpon>biseccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inicio.Master.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inicio.Master.designer.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\newton_raphson.aspx.cs">
+      <DependentUpon>newton_raphson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\newton_raphson.aspx.designer.cs">
+      <DependentUpon>newton_raphson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Regla_falsa.aspx.cs">
+      <DependentUpon>Regla_falsa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Regla_falsa.aspx.designer.cs">
+      <DependentUpon>Regla_falsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vista1.aspx.cs">
+      <DependentUpon>vista1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vista1.aspx.designer.cs">
+      <DependentUpon>vista1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Theme\.DS_Store" />
+    <Content Include="Admin\Theme\assets\.DS_Store" />
+    <Content Include="Admin\Theme\assets\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\Theme\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Admin\Theme\assets\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin\Theme\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admin\Theme\assets\img\.DS_Store" />
+    <Content Include="Admin\Theme\assets\img\portfolio\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\bootstrap-inputmask\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\chart-master\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\fancybox\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\fullcalendar\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\css\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\images\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\gritter\js\.DS_Store" />
+    <Content Include="Admin\Theme\assets\js\jquery-easy-pie-chart\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\.DS_Store" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.eot" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.ttf" />
+    <Content Include="Admin\Theme\assets\lineicons\fonts\linecons.woff" />
+    <Content Include="Chart.js-2.9.4\.codeclimate.yml" />
+    <Content Include="Chart.js-2.9.4\.editorconfig" />
+    <Content Include="Chart.js-2.9.4\.eslintignore" />
+    <Content Include="Chart.js-2.9.4\.eslintrc.yml" />
+    <Content Include="Chart.js-2.9.4\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Chart.js-2.9.4\.github\ISSUE_TEMPLATE\BUG.md" />
+    <Content Include="Chart.js-2.9.4\.github\ISSUE_TEMPLATE\DOCS.md" />
+    <Content Include="Chart.js-2.9.4\.github\ISSUE_TEMPLATE\FEATURE.md" />
+    <Content Include="Chart.js-2.9.4\.github\ISSUE_TEMPLATE\SUPPORT.md" />
+    <Content Include="Chart.js-2.9.4\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Chart.js-2.9.4\.gitignore" />
+    <Content Include="Chart.js-2.9.4\.htmllintrc" />
+    <Content Include="Chart.js-2.9.4\.travis.yml" />
+    <Content Include="Chart.js-2.9.4\book.json" />
+    <Content Include="Chart.js-2.9.4\bower.json" />
+    <Content Include="Chart.js-2.9.4\composer.json" />
+    <Content Include="Chart.js-2.9.4\docs\axes\cartesian\category.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\cartesian\linear.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\cartesian\logarithmic.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\cartesian\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\cartesian\time.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\labelling.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\radial\linear.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\radial\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\axes\styling.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\area.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\bar.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\bubble.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\doughnut.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\line.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\mixed.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\polar.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\radar.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\charts\scatter.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\animations.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\elements.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\layout.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\legend.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\title.md" />
+    <Content Include="Chart.js-2.9.4\docs\configuration\tooltip.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\api.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\axes.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\charts.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\contributing.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\plugins.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\developers\updates.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\accessibility.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\colors.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\device-pixel-ratio.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\fonts.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\interactions\events.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\interactions\modes.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\interactions\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\options.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\performance.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\general\responsive.md" />
+    <Content Include="Chart.js-2.9.4\docs\getting-started\installation.md" />
+    <Content Include="Chart.js-2.9.4\docs\getting-started\integration.md" />
+    <Content Include="Chart.js-2.9.4\docs\getting-started\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\getting-started\usage.md" />
+    <Content Include="Chart.js-2.9.4\docs\notes\comparison.md" />
+    <Content Include="Chart.js-2.9.4\docs\notes\extensions.md" />
+    <Content Include="Chart.js-2.9.4\docs\notes\license.md" />
+    <Content Include="Chart.js-2.9.4\docs\notes\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\README.md" />
+    <Content Include="Chart.js-2.9.4\docs\SUMMARY.md" />
+    <Content Include="Chart.js-2.9.4\LICENSE.md" />
+    <Content Include="Chart.js-2.9.4\MAINTAINING.md" />
+    <Content Include="Chart.js-2.9.4\package-lock.json" />
+    <Content Include="Chart.js-2.9.4\package.json" />
+    <Content Include="Chart.js-2.9.4\README.md" />
+    <Content Include="Chart.js-2.9.4\samples\.eslintrc.yml" />
+    <Content Include="Chart.js-2.9.4\scripts\deploy.sh" />
+    <Content Include="Chart.js-2.9.4\scripts\release.sh" />
+    <Content Include="Chart.js-2.9.4\test\.eslintrc.yml" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-absolute.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-offset.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-single-reverse.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-flex.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-max.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-min-interval.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-multiple.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-no-overlap.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-offset.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-per-dataset-stacked.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-per-dataset.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-reverse.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-single-xy.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\bar-thickness-stacked.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-horizontal.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-stacked-horizontal.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar-stacked.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\floatBar\float-bar.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\stacking\order-default.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bar\stacking\order-specified.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.bubble\point-style.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-border-align-center.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-border-align-inner.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-circumference-over-2pi.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-circumference.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\doughnut-weight.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-border-align-center.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-border-align-inner.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-circumference.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.doughnut\pie-weight.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x-max.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x-min.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-x.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y-max.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y-min.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\default-y.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\clip\specified.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\non-numeric-y.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.line\point-style.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\angle-array.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\angle-undefined.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\border-align-center.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.polarArea\border-align-inner.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\controller.radar\point-style.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.scale\label-offset-vertical-axes.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\core.scale\tick-drawing.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-circle.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-cross-rot.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-cross.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-dash.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-line.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect-rot.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect-rounded.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-rect.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-star.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\element.point\point-style-triangle.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-end-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-end.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-origin.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-start-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-boundary-start.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-border.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-spline-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset-spline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-line-dataset.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end-circular.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-end.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-circular.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-origin.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start-circular.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-boundary-start.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-border.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-span.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset-spline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.filler\fill-radar-dataset.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-center-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-center-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-end-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-bottom-start-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-center-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-center-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-default-center.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-end-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-left-start-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-center-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-center-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-default-center.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-end-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-right-start-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-center-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-center-single.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-end-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\plugin.legend\legend-doughnut-top-start-mulitiline.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\anglelines-disable.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\border-dash.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\circular-border-dash.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-disable.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-no-z.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\gridlines-z.json" />
+    <Content Include="Chart.js-2.9.4\test\fixtures\scale.radialLinear\indexable-gridlines.json" />
+    <None Include="packages.config" />
+    <Content Include="Views\Inicio.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\Theme\assets\img\friends\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64150</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64150/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
